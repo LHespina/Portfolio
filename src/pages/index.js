@@ -26,7 +26,7 @@ const Home = () => {
   const cardData = [
     {
       title: "Educational Background",
-      icon:   School,
+      icon: School,
       content: [
         // ... educational content ...
         {
@@ -50,7 +50,7 @@ const Home = () => {
           dates: "2019 - Present",
         },
       ],
-      
+
     },
     {
       title: "Objectives",
@@ -71,7 +71,7 @@ const Home = () => {
       title: "Skills and Qualifications",
       icon: Gear,
       content: [
-
+        // ... skills and qualifications content ...
         { skill: "Basic C Programming" },
         { skill: "Basic Java Programming" },
         { skill: "Basic Phython Programming" },
@@ -125,6 +125,7 @@ const Home = () => {
       title: "Language",
       icon: Lang,
       content: [
+        // ... Language content ...
         {
           language: "Bisaya",
           proficiency: "Proficiency: Fluent",
@@ -146,23 +147,23 @@ const Home = () => {
       title: "Certifications",
       icon: Certificate,
       content: [
-        
-          {
-            certificationTitle: "Entrepreneurship MOOC",
-            
-            date: "Date: 2022"
-          },
-          {
-            certificationTitle: "Information Systems Auditing, Controls and Assurance Course",
-            
-            date: "Date: 2022"
-          },
-          {
-            certificationTitle: "Information Systems and Business Processes Course",
+        // ... Certifications content ...
+        {
+          certificationTitle: "Entrepreneurship MOOC",
 
-            date: "Date: 2022"
-          }
-        
+          date: "Date: 2022"
+        },
+        {
+          certificationTitle: "Information Systems Auditing, Controls and Assurance Course",
+
+          date: "Date: 2022"
+        },
+        {
+          certificationTitle: "Information Systems and Business Processes Course",
+
+          date: "Date: 2022"
+        }
+
       ],
     },
   ];
@@ -183,33 +184,33 @@ const Home = () => {
               >
                 <div className="card-inner">
                   {expandedCard !== index && (
-                    <div className="card-front">                     
-                     <img src={card.icon}/><p>My {card.title}</p>
+                    <div className="card-front">
+                      <img src={card.icon} /><p>My {card.title}</p>
                     </div>
 
                   )}
 
                   {expandedCard === index && (
                     <div
-                      className={`card-back card-back-${index}`} // Unique class name based on the index
+
                     >
                       {/* Content for the back side */}
-                      
-                      
+
+
                       {card.content.map((item, i) => (
-                        
+
                         <div key={i} className={card.className || ""}>
                           <div className="Certification">
-                          <h3>{item.certificationTitle}</h3>
-        
-        <p> {item.date}</p>
-                            </div>
+                            <h3>{item.certificationTitle}</h3>
+
+                            <p> {item.date}</p>
+                          </div>
                           <div className="Language">
-                          <h3>{item.language}</h3>
+                            <h3>{item.language}</h3>
                             <p>{item.proficiency}</p>
                             <p>{item.description}</p>
-                            </div>
-                      
+                          </div>
+
                           <div className="Educ">
                             <h4>{item.title}</h4>
                             <p>{item.school}</p>
@@ -217,18 +218,18 @@ const Home = () => {
                           </div>
 
                           <div>
-                          {card.title === "Skills and Qualifications" && (
-                          
-                          <ul className="Skill">
+                            {card.title === "Skills and Qualifications" && (
+
+                              <ul className="Skill">
                                 <li >
                                   <strong>{item.skill}</strong>
                                 </li>
-                            </ul>
+                              </ul>
                             )}
-                            </div>
-                           
-                          
-                            <div className="Experience">
+                          </div>
+
+
+                          <div className="Experience">
                             <p className="Experience1">{item.experienceDate}</p>
                             <strong><p className="Experience2">{item.experienceCompany}</p></strong>
                             <p className="Experience3">{item.experiencePosition}</p>
@@ -243,14 +244,14 @@ const Home = () => {
                               </ul>
                             )}
                           </div>
-                          
+
                           <div className="Objective"><strong>
                             <p className="Objective1">{item.objectiveLine1}</p>
                             <p className="Objective2">{item.objectiveLine2}</p>
                             <p className="Objective3">{item.objectiveLine3}</p>
-                            </strong>
+                          </strong>
                           </div>
-                          
+
                         </div>
                       ))}
                     </div>
