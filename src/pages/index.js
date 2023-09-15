@@ -14,7 +14,7 @@ const Home = () => {
 
   const handleCardClick = (index) => {
     if (expandedCard === index) {
-      setExpandedCard(null); // Collapse the expanded card if clicked again
+      setExpandedCard(null); 
     } else {
       setExpandedCard(index);
     }
@@ -28,7 +28,7 @@ const Home = () => {
       title: "Educational Background",
       icon: School,
       content: [
-        // ... educational content ...
+       
         {
           title: "Primary Education",
           school: "Colegio De La Inmaculada Concepcion.",
@@ -56,7 +56,7 @@ const Home = () => {
       title: "Objectives",
       icon: Bullseye,
       content: [
-        // ... objectives content ...
+       
         {
           objectiveLine1:
             "Motivated and passionate college student with the intention of gaining admission",
@@ -71,7 +71,7 @@ const Home = () => {
       title: "Skills and Qualifications",
       icon: Gear,
       content: [
-        // ... skills and qualifications content ...
+
         { skill: "Basic C Programming" },
         { skill: "Basic Java Programming" },
         { skill: "Basic Phython Programming" },
@@ -96,7 +96,7 @@ const Home = () => {
       icon: Briefcase,
       content: [
         {
-          // ... work experience content ...
+         
           experienceDate: "2008-2013",
           experienceCompany: "catNmouse",
           experiencePosition: "Internet Cafe Manager",
@@ -108,7 +108,7 @@ const Home = () => {
           sixthWork: "Answer telephone enquiries from students, attend to visitors and assist other staff in the organization with their enquiries.",
         },
         {
-          // ... work experience content ...
+          
           experienceDate: "2018",
           experienceCompany: "CREOTEC Philippines Inc.",
           experiencePosition: "Human Resources(Work Immersion)",
@@ -125,7 +125,7 @@ const Home = () => {
       title: "Language",
       icon: Lang,
       content: [
-        // ... Language content ...
+      
         {
           language: "Bisaya",
           proficiency: "Proficiency: Fluent",
@@ -147,7 +147,7 @@ const Home = () => {
       title: "Certifications",
       icon: Certificate,
       content: [
-        // ... Certifications content ...
+
         {
           certificationTitle: "Entrepreneurship MOOC",
 
@@ -192,9 +192,9 @@ const Home = () => {
 
                   {expandedCard === index && (
                     <div
-
+                      className={`card-back card-back-${index}`}
                     >
-                      {/* Content for the back side */}
+
 
 
                       {card.content.map((item, i) => (
