@@ -1,0 +1,429 @@
+
+.container {
+
+  
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: darkgrey;
+  min-height: 100vh;
+  
+  background-size: cover;
+  
+  background-repeat: no-repeat;
+
+  background-position: center;
+
+}
+
+.main {
+  flex: 1;
+  padding: 60px;
+  background-color: lightgray;
+  margin-right: 100px;
+ 
+  transition: margin-right 0.3s ease;
+  
+  margin-bottom: 50px;
+  align-items: center;
+ 
+  justify-content: center;
+
+
+}
+
+
+.card-container {
+
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 0 0 calc(33.33% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #fff;
+
+}
+
+
+
+.card:not(.expanded):hover {
+  transform: scale(1.05);
+  background-color: grey;
+  color: #000;
+ 
+  cursor: pointer;
+}
+
+.card-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+
+.card.expanded .card-back {
+  display: block;
+}
+
+.card.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+ 
+  margin: 0;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+ 
+  height: auto;
+ 
+}
+
+
+
+.profile-image-container {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  background-color: white;
+  
+  color: black;
+  
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+ 
+  bottom: 0;
+
+  width: 89.9%;
+  height: 2.5%;
+  z-index: 1;
+
+}
+
+.footer-content {
+  margin-top: 10px;
+  margin:-20px;
+}
+
+
+
+
+.profile-image {
+  width: 100%;
+  height: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+
+
+
+.sidebar {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  width: 100px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.sidebar.hovered {
+  width: 210px;
+
+  .main {
+    margin-right: 0;
+  }
+}
+
+.front-content {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  text-align: center;
+}
+
+.back-content {
+  opacity: 0;
+  display: none;
+}
+
+.sidebar.hovered .front-content {
+  opacity: 0;
+}
+
+.sidebar.hovered .back-content {
+  display: block;
+  opacity: 1;
+}
+
+.sidebar.show-back {
+  width: 250px;
+}
+
+.sidebar.show-back .back-content {
+  display: block;
+  opacity: 1;
+}
+
+
+.back-content h1,
+.back-content p,
+.sidebar .side-button,
+.profile-image-container {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+.side-button:hover {
+  background-color: red;
+  
+  color: #000;
+ 
+  cursor: pointer;
+}
+
+
+.back-content * {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+
+:root {
+  --font-md: 16px;
+  --line-height-normal: 1.5;
+}
+
+
+
+
+.about-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  z-index: 999;
+}
+
+
+.about-overlay h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.about-overlay p {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 30px; 
+  margin-left: 20px;
+  margin-right: 20px;
+  text-indent: 3%;
+}
+
+.about-overlay button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+
+}
+
+.contact-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  
+}
+
+
+.contact-overlay h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.contact-overlay p {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+
+.contact-overlay button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+
+}
+
+.Objective {
+  text-align: justify;
+  text-align-last: center;
+  font-size: 30px;
+  margin-top: 50px;
+  width:107%;
+}
+
+.card-back {
+  background-image: url("C:\Users\Lanz\lanzResume\src\images\notebook.png");
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+  min-width: 204vh;
+  color: black;
+}
+
+.social-icon {
+  width: 24px;
+
+  height: 24px;
+
+  margin-right: 8px;
+  
+  vertical-align: middle;
+  
+}
+
+
+
+.Experience
+{
+  list-style-type:square;
+  text-align: justify;
+  list-style-position: inside;
+
+  flex-direction: column;
+  align-items: center;
+ 
+  justify-content: center;
+
+  text-align:justify;
+ 
+  margin-bottom: -3%;
+  margin-top: 4%;
+  margin-left: 20%;
+font-size:110%;
+}
+.Worklist {
+  
+  list-style-type:square;
+  text-align: justify;
+  list-style-position: inside;
+
+}
+.Skill {
+  list-style-type: square;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: center;
+  width: 40%;
+  margin-bottom: -3%;
+  margin-top: 4%;
+  margin-left: 12%;
+}
+
+
+.Educ{
+  text-align: justify;
+  text-align-last: center;
+  font-size: 17px;
+  margin-top: 50px;
+  width:100%;
+}
+.Language
+{
+  text-align: justify;
+  text-align-last: center;
+  font-size: 30px;
+  margin-top: 50px;
+  width:100%;
+}
+.Certification
+{
+  text-align: justify;
+  text-align-last: center;
+  font-size: 30px;
+  margin-top: 50px;
+  width:100%;
+}
+
+
+
+
