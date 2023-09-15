@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
   };
 
   const handlePhoneClick = () => {
-    const phoneNumber = "09324228682"; // Replace with the actual phone number
+    const phoneNumber = "09324228682"; 
     copyToClipboard(phoneNumber);
   };
 
@@ -75,7 +75,7 @@ const Layout = ({ children }) => {
 
       <main className="main">{children}</main>
       <footer className="footer">
-        <div className="Footer-extras">{/* ... (your existing footer content) */}</div>
+        <div className="Footer-extras">{}</div>
         <div className="footer-content">
           <p>&copy; {new Date().getFullYear()} Lanz Harvee Espina</p>
         </div>
