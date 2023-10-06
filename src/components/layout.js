@@ -3,7 +3,88 @@ import "../styles/home.css";
 import profileImage from "../images/Lanz.png";
 import Instagramicon from "../images/Instagram-Icon.png";
 import Facebookicon from "../images/fb icon.png";
+import styled from 'styled-components';
 
+// Define a styled component for the navbar
+const Header = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #171717;
+  color: #73a580;
+  font-size: 24px;
+  padding: 20px;
+`;
+
+// Styled component for the navigation links
+const Navbar = styled.nav`
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  li {
+    font-size: 13px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ffff;
+  }
+`;
+
+
+const GlowingText = styled.h2`
+  font-family: "Helvetica";
+  color: white;
+  text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+  animation: glowing 2s infinite;
+  a {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+  }
+  @keyframes glowing {
+    0% {
+      text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    }
+    50% {
+      text-shadow: none;
+    }
+    100% {
+      text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    }
+  }
+`;
+
+const GlowingButton = styled.button`
+  background-color: #3e363f;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  animation: glowing 2s infinite;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #8b0000;
+  }
+
+  @keyframes glowing {
+    0% {
+      text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    }
+    50% {
+      text-shadow: none;
+    }
+    100% {
+      text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    }
+  }
+`;
 
 const Layout = ({ children }) => {
   const [isContactOverlayVisible, setContactOverlayVisible] = useState(false);
@@ -34,50 +115,65 @@ const Layout = ({ children }) => {
   };
 
   const handlePhoneClick = () => {
-    const phoneNumber = "09324228682"; // Replace with the actual phone number
+    const phoneNumber = "09324228682";
     copyToClipboard(phoneNumber);
   };
 
   return (
     <div className={`page-container ${isSidebarHovered ? "sidebar-hovered" : ""}`}>
-      <header className="header">
-        <h1>My Portfolio</h1>
-      </header>
+    <Header>
+      <GlowingText>
+        <a href="#home">Welcome to my Personal Portfolio</a>
+      </GlowingText>
+      <Navbar>
+        <ul>
+          <li>
+            <GlowingText><a href="#personal-details">Personal Details</a></GlowingText>
+          </li>
+          <li>
+          <GlowingText><a href="#ask-me">Ask me</a></GlowingText>
+          </li>
+          <li>
+          <GlowingText> <a href="#comments">Comments</a></GlowingText>
+          </li>
+        </ul>
+      </Navbar>
+    </Header>
       <aside
-  className={`sidebar ${isSidebarHovered ? "hovered" : ""}`}
-  onMouseEnter={() => setSidebarHovered(true)}
-  onMouseLeave={() => setSidebarHovered(false)}
->
-  <div className="front-content">
-    <strong><p>CHECK ME OUT!</p></strong>
-  </div>
+        className={`sidebar ${isSidebarHovered ? "hovered" : ""}`}
+        onMouseEnter={() => setSidebarHovered(true)}
+        onMouseLeave={() => setSidebarHovered(false)}
+      >
+        <div className="front-content">
+          <strong><GlowingText>CHECK ME OUT!</GlowingText></strong>
+        </div>
 
-  <div className={`back-content ${showBack ? "show" : ""}`}>
-    <div className="profile-image-container">
-      <img src={profileImage} alt="Lanz" className="profile-image" />
-    </div>
-    <div>
-      <h1>Lanz Harvee Espina</h1>
-      <p>Student/Intern</p>
-    </div>
-    <div>
-    <button className="side-button" onClick={toggleAboutOverlay}>
-      About
-    </button>
-    </div>
-    <div>
-    <button className="side-button" onClick={toggleContactOverlay}>
-      Contact
-    </button>
-    </div>
-  </div>
-</aside>
+        <div className={`back-content ${showBack ? "show" : ""}`}>
+          <div className="profile-image-container">
+            <img src={profileImage} alt="Lanz" className="profile-image" />
+          </div>
+          <div>
+            <GlowingText>Lanz Harvee Espina</GlowingText>
+            <GlowingText>Student/Intern</GlowingText>
+          </div>
+          <div>
+            <GlowingButton className="side-button" onClick={toggleAboutOverlay}>
+              About
+            </GlowingButton>
+          </div>
+          <div>
+            <GlowingButton className="side-button" onClick={toggleContactOverlay}>
+              Contact
+            </GlowingButton>
+          </div>
+        </div>
+      </aside>
 
-      <main className="main">{children}</main>
-      <footer className="footer">
-        <div className="Footer-extras">{/* ... (your existing footer content) */}</div>
+      <main className="mainLayout" style={{ backgroundColor: '#650000' }}>{children}</main>
+      <footer className="footer" style={{ backgroundColor: '#171717' }}>
+        <div className="Footer-extras">{}</div>
         <div className="footer-content">
-          <p>&copy; {new Date().getFullYear()} Lanz Harvee Espina</p>
+          <p style={{ color: 'white', fontFamily: "Helvetica" }}>&copy; {new Date().getFullYear()} Lanz Harvee Espina</p>
         </div>
       </footer>
       {isAboutOverlayVisible && (
@@ -102,10 +198,10 @@ Let's connect and explore the endless possibilities together! 🚀</p>
             <p>Phone: 09324228682</p>
           </div>
           <p>Address:</p>
-          <a href="https://www.google.com/maps/place/339+A.+Del+Rosario+St,+Mandaue+City,+6000+Cebu/">
+          <a href="https://www.google.com/maps/place/339+A.+Del+Rosario+St,+Mandaue+City,+6000+Cebu/" >
             <p>339 A Del Rosario St. Guizo Mandaue City</p>
           </a>
-          
+
           <p>Email: </p>
           <p onClick={() => copyToClipboard("lanzharveeespina@yahoo.com")} id="email">
             lanzharveeespina@yahoo.com
@@ -116,7 +212,7 @@ Let's connect and explore the endless possibilities together! 🚀</p>
               <img src={Facebookicon} alt="Facebook" className="social-icon" />
             </a>
             <a href="https://www.instagram.com/espina_lanz/">
-              <img src={Instagramicon} alt="Instagram" className="social-icon"/>
+              <img src={Instagramicon} alt="Instagram" className="social-icon" />
             </a>
           </div>
           <button onClick={toggleContactOverlay}>Close</button>
