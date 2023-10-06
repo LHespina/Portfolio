@@ -115,7 +115,11 @@ const Layout = ({ children }) => {
   };
 
   const handlePhoneClick = () => {
+<<<<<<< HEAD
     const phoneNumber = "09324228682";
+=======
+    const phoneNumber = "09324228682"; 
+>>>>>>> 5087d985e93faf7b8287e59d0553a40cca4fc229
     copyToClipboard(phoneNumber);
   };
 
@@ -169,8 +173,13 @@ const Layout = ({ children }) => {
         </div>
       </aside>
 
+<<<<<<< HEAD
       <main className="mainLayout" style={{ backgroundColor: '#650000' }}>{children}</main>
       <footer className="footer" style={{ backgroundColor: '#171717' }}>
+=======
+      <main className="main">{children}</main>
+      <footer className="footer">
+>>>>>>> 5087d985e93faf7b8287e59d0553a40cca4fc229
         <div className="Footer-extras">{}</div>
         <div className="footer-content">
           <p style={{ color: 'white', fontFamily: "Helvetica" }}>&copy; {new Date().getFullYear()} Lanz Harvee Espina</p>
